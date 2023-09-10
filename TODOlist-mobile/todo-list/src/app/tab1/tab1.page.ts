@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Task } from '../interfaces/task';
 
 @Component({
   selector: 'app-tab1',
@@ -9,9 +10,9 @@ export class Tab1Page {
 
   constructor() { }
 
-  tasks: string[] = [];
+  tasks: Task[] = [];
 
-  onTaskAdded(taskName: string) {
-    this.tasks.push(taskName);
+  onTaskAdded(task: Task) {
+    this.tasks.push(task);
   }
 }

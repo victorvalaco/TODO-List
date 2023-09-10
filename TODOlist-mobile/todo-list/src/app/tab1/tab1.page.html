@@ -11,7 +11,8 @@
 
   <ion-list>
     <ion-item *ngFor="let task of tasks">
-      {{ task }}
+      <ion-checkbox class="task-checkbox" [(ngModel)]="task.completed"></ion-checkbox>
+      <span class="item-label" [ngClass]="{'completed': task.completed}">{{ task.name }}</span>
     </ion-item>
   </ion-list>
 </ion-content>

@@ -1,12 +1,14 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { Task } from '../interfaces/task';
 
 @Component({
   selector: 'app-add-task',
   templateUrl: 'add-task.component.html',
   styleUrls: ['add-task.component.scss']
 })
+
 export class AddTaskComponent {
-  @Output() taskAdded = new EventEmitter<string>();
+  @Output() taskAdded = new EventEmitter<Task>();
 
   show = false;
   taskName = '';
@@ -21,7 +23,11 @@ export class AddTaskComponent {
   }
 
   addTask() {
-    this.taskAdded.emit(this.taskName);
+    const newTask: Task = {
+      name: this.taskName,
+      completed: false
+    }
+    this.taskAdded.emit(newTask);
     this.taskName = '';
     this.show = false;
   }
