@@ -22,6 +22,10 @@ export class AddTaskComponent {
     this.show = false;
   }
 
+  submitTask() {
+    this.addTask()
+  }
+
   addTask() {
     const newTask: Task = {
       name: this.taskName,

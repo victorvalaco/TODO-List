@@ -14,3 +14,16 @@ button.add-task-button {
     display: flex;
     justify-content: center;
 }
+
+.button-container ion-icon {
+    font-size: 40px;
+    margin: 0 20px;
+}
+
+ion-icon.check {
+    color: rgb(62, 251, 100);
+}
+
+ion-icon.close {
+    color: rgb(232, 33, 76);
+}
