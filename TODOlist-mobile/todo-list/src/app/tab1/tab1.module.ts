@@ -10,7 +10,7 @@ import { AddTaskModule } from '../add-task/add-task.module';
 
 @NgModule({
   imports: [
-    IonicModule,
+    IonicModule.forRoot(),
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,

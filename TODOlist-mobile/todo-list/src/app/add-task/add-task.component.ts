@@ -25,7 +25,7 @@ export class AddTaskComponent {
   addTask() {
     const newTask: Task = {
       name: this.taskName,
-      completed: false
+      completed: false,
     }
     this.taskAdded.emit(newTask);
     this.taskName = '';

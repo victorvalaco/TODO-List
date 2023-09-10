@@ -10,9 +10,18 @@
   <app-add-task (taskAdded)="onTaskAdded($event)"></app-add-task>
 
   <ion-list>
-    <ion-item *ngFor="let task of tasks">
-      <ion-checkbox class="task-checkbox" [(ngModel)]="task.completed"></ion-checkbox>
-      <span class="item-label" [ngClass]="{'completed': task.completed}">{{ task.name }}</span>
-    </ion-item>
+    <ion-item-sliding *ngFor="let task of tasks">
+      <ion-item>
+        <ion-checkbox [(ngModel)]="task.completed"></ion-checkbox>
+        <ion-label class="item-label" [ngClass]="{'completed': task.completed}">{{ task.name }}</ion-label>
+      </ion-item>
+      <ion-item-options side="start">
+        <ion-item-option color="danger">
+          <ion-icon slot="icon-only" name="trash" (click)="deleteTask(task)"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
   </ion-list>
+
+
 </ion-content>
