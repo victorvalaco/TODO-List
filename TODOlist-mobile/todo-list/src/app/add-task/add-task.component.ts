@@ -15,6 +15,11 @@ export class AddTaskComponent {
     this.show = true;
   }
 
+  cancelForm() {
+    this.taskName = '';
+    this.show = false;
+  }
+
   addTask() {
     this.taskAdded.emit(this.taskName);
     this.taskName = '';

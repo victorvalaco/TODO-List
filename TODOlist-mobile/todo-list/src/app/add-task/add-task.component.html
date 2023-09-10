@@ -8,5 +8,8 @@
     <ion-input label="Task:" [(ngModel)]="taskName" name="taskName"></ion-input>
   </ion-item>
 
-  <ion-button type="submit">Agregar tarea</ion-button>
+  <div class="button-container">
+    <ion-button color="dark" (click)="cancelForm()">&#10060;</ion-button>
+    <ion-button type="submit" color="dark">&#9989;</ion-button>
+  </div>
 </form>
