@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Task } from '../interfaces/task';
-import { Gesture, GestureController } from '@ionic/angular';
+import { AlertController, Gesture, GestureController, ItemReorderEventDetail } from '@ionic/angular';
 
 
 @Component({
@@ -10,9 +10,7 @@ import { Gesture, GestureController } from '@ionic/angular';
 })
 export class Tab1Page {
 
-  constructor(private gestureCtrl: GestureController) {
-
-  }
+  constructor() { }
 
   tasks: Task[] = [];
 
@@ -25,5 +23,9 @@ export class Tab1Page {
     if (index > -1) {
       this.tasks.splice(index, 1);
     }
+  }
+
+  handleReorder(ev: CustomEvent<ItemReorderEventDetail>) {
+    ev.detail.complete();
   }
 }
