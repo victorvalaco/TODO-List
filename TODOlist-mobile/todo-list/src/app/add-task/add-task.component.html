@@ -1,0 +1,12 @@
+<button ion-button class="add-task-button" (click)="showForm()">
+  <ion-icon name="add"></ion-icon>
+</button>
+
+<form *ngIf="show" (submit)="addTask()">
+  <ion-item>
+    <ion-label>Nombre de la tarea:</ion-label>
+    <ion-input label="Task:" [(ngModel)]="taskName" name="taskName"></ion-input>
+  </ion-item>
+
+  <ion-button type="submit">Agregar tarea</ion-button>
+</form>

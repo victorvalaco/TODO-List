@@ -6,12 +6,12 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content padding>
+  <app-add-task (taskAdded)="onTaskAdded($event)"></app-add-task>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-list>
+    <ion-item *ngFor="let task of tasks">
+      {{ task }}
+    </ion-item>
+  </ion-list>
 </ion-content>
