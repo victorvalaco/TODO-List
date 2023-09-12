@@ -21,9 +21,14 @@ button.add-task-button {
 }
 
 ion-icon.check {
-    color: rgb(62, 251, 100);
+    color: rgb(72, 201, 98);
 }
 
 ion-icon.close {
     color: rgb(232, 33, 76);
+}
+
+ion-icon.disabled {
+    opacity: 0.5; // Puedes ajustar la opacidad según tus preferencias
+    pointer-events: none; // Evita que se haga clic en el icono desactivado
 }

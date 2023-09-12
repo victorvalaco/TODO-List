@@ -4,8 +4,8 @@
 
 <form *ngIf="show" (submit)="addTask()">
   <ion-item>
-    <ion-label>Nombre de la tarea:</ion-label>
-    <ion-input label="Task:" [(ngModel)]="taskName" name="taskName"></ion-input>
+    <ion-label><ion-icon name="pencil"></ion-icon></ion-label>
+    <ion-input no-label="Task:" [(ngModel)]="taskName" name="taskName"></ion-input>
   </ion-item>
 
   <div class="button-container">

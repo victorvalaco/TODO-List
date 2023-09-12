@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Task } from '../interfaces/task';
-import { AlertController, Gesture, GestureController, ItemReorderEventDetail } from '@ionic/angular';
+import { ItemReorderEventDetail } from '@ionic/angular';
 
 
 @Component({
@@ -10,9 +10,10 @@ import { AlertController, Gesture, GestureController, ItemReorderEventDetail } f
 })
 export class Tab1Page {
 
-  constructor() { }
-
   tasks: Task[] = [];
+  checkBoxesSelected: boolean = false;
+
+  constructor() { }
 
   onTaskAdded(task: Task) {
     this.tasks.push(task);
@@ -21,11 +22,17 @@ export class Tab1Page {
   deleteTask(task: Task) {
     const index = this.tasks.indexOf(task);
     if (index > -1) {
+      this.tasks[index].completed = false
+      this.checkSelection()
       this.tasks.splice(index, 1);
     }
   }
 
   handleReorder(ev: CustomEvent<ItemReorderEventDetail>) {
     ev.detail.complete();
+  }
+
+  checkSelection() {
+    this.checkBoxesSelected = this.tasks.some(task => task.completed);
   }
 }
